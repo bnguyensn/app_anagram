@@ -1,0 +1,52 @@
+extends layout
+
+block custom-stylesheets
+    link(rel='stylesheet', href='/stylesheets/anagramgame.css')
+block custom-js
+    script(src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenLite.min.js")
+    script(src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/plugins/CSSPlugin.min.js")
+    script(src='/javascripts/anagramgame.js')
+
+block content
+    #loader-bkg
+        #loader
+    #main-content.wrapper
+        #app
+            #page-start
+                #app-title.title: |Anagram Game
+                #app-desc.desc
+                    |Get as many anagram as possible before the time runs out!
+                    br
+                    |Not compatible with Internet Explorer 8 and below.
+                #button-start.btn-large(@click='startClicked'): |LET'S GO!
+            #page-game.pos-r(style='display: none; opacity: 0')
+                #keyword
+                    span(v-cloak=''): |{{ keyword }}
+                #timer
+                .input-box
+                    input#word-input(type='text', placeholder='type your answer here...', v-model='wordInput', @click='inputClicked', @keydown.13='wordInputKDEnter', @keyup.13='wordInputKUEnter', @keydown.27.prevent='gameKDEsc', @keyup.27.prevent='gameKUEsc')
+                //|{{ playerInput }}
+                #hint
+                    |Press 'ESC' to skip this word
+                #status-indicator
+                #history
+                    #history-top: span(v-cloak=''): |{{ histTop }}
+                    #history-mid: span(v-cloak=''): | {{ histMid }}
+                    #history-bot: span(v-cloak=''): | {{ histBot }}
+                #button-end.btn-small(@click='endClicked'): |END GAME
+            #page-end.pos-r(style='display: none; opacity: 0')
+                .title: |Game Over!
+                .desc
+                    |Thanks for playing! You correctly got {{ countCorrect }} anagrams
+                    | and skipped {{ countSkipped }}
+                    | out of {{ countTotal }} words.
+                #highscore-screen
+                    .desc.
+                        Congratulations! You are one of our best 10 players.
+                        <br>
+                        Enter your name for the Hall of Fame.
+                    .input-box
+                        input#name-input(type='text', placeholder='type in your name, or leave blank for anonymity', v-model='nameInput', @keydown.13='nameInputKDEnter', @keyup.13='nameInputKUEnter')
+                #highscore-table
+                #button-restart.btn-large(@click='restartClicked'): |PLAY AGAIN!
+

@@ -1,0 +1,250 @@
+body {
+    /* Some properties will override the main layout */
+    background-color: #FF8A65; /* Orange 300 */
+}
+
+/* ======= *** LOADER *** ======= */
+
+#loader-bkg {
+    background-color: #fafafa;
+
+    /* Stretch this to full screen, no scroll (also needs position: fixed) */
+    height: 100%; width: 100%; left: 0; top: 0; overflow: hidden;
+
+    /* Centering shenanigans */
+    position: fixed;
+}
+
+#loader {
+    border: 16px solid #F5F5F5; /* Grey 200 */
+    border-top: 16px solid #29B6F6; /* LBlue 400 */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 1s linear infinite;
+    -webkit-animation: spin 1s linear infinite;
+
+    /* Centering shenanigans */
+    position: absolute;
+    top: 50%; left: 50%;
+    margin: -60px 0 0 -60px;
+}
+
+@keyframes spin {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+}
+
+@-webkit-keyframes spin {
+    0% {-webkit-transform: rotate(0deg);}
+    100% {-webkit-transform: rotate(360deg);}
+}
+
+@-ms-keyframes spin {
+    0% {-ms-transform: rotate(0deg);}
+    100% {-ms-transform: rotate(360deg);}
+}
+
+/* ======= *** MAIN CONTENT *** ======= */
+
+#main-content {
+    text-align: center;
+    font-size: 200%;
+}
+
+#app {
+
+    /* Transition shenanigans */
+    position: relative;
+}
+
+.btn-large {
+    display: inline-block;
+    margin-top: 75px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    padding: 10px 40px;
+    /*background-color: #8BC34A; !* LGreen 500 *!*/
+    font-size: 150%;
+    /*color: #FAFAFA;*/
+
+    /* Elevation */
+    -webkit-box-shadow: 3px 3px 3px 0 rgba(0, 0, 0, .6);
+    -moz-box-shadow: 3px 3px 3px 0 rgba(0, 0, 0, .6);
+    box-shadow: 3px 3px 3px 0 rgba(0, 0, 0, .6);
+
+    /* Disable selection of text */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    /* No caret */
+    cursor: default;
+}
+
+.btn-small {
+    display: inline-block;
+    margin-top: 25px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    padding: 5px 20px;
+    /*background-color: #8BC34A; !* LGreen 500 *!*/
+    font-size: 100%;
+    /*color: #FAFAFA;*/
+
+    /* Elevation */
+    -webkit-box-shadow: 3px 3px 3px 0 rgba(0, 0, 0, .6);
+    -moz-box-shadow: 3px 3px 3px 0 rgba(0, 0, 0, .6);
+    box-shadow: 3px 3px 3px 0 rgba(0, 0, 0, .6);
+
+    /* Disable selection of text */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    /* No caret */
+    cursor: default;
+}
+
+.btn-large:hover, .btn-small:hover {
+    /*background-color: #9CCC65; !* LGreen 400 *!*/
+    /*color: #EEEEEE; !* Grey 200 *!*/
+
+    /* Elevation */
+    -webkit-box-shadow: 4px 4px 4px 0 rgba(0, 0, 0, .6);
+    -moz-box-shadow: 4px 4px 4px 0 rgba(0, 0, 0, .6);
+    box-shadow: 4px 4px 4px 0 rgba(0, 0, 0, .6);
+}
+
+.btn-large:active, .btn-small:active {
+    /*background-color: #7CB342; !* LGreen 600 *!*/
+    /*color: #F5F5F5; !* Grey 100 *!*/
+
+    /* Elevation */
+    -webkit-box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, .6);
+    -moz-box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, .6);
+    box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, .6);
+}
+
+.pos-r {
+    left: 100vw;
+}
+
+/* ==== Start Page ====*/
+
+#page-start {
+
+    /* Transition shenanigans */
+    position: absolute;
+    width: 100%;
+}
+
+.title {
+    margin: .5em 0;
+    font-size: 200%;
+    color: #FAFAFA;
+    font-weight: bold;
+
+}
+
+.desc {
+    font-size: 50%;
+    color: #FAFAFA;
+}
+
+#button-start, #button-restart {
+    background-color: #8BC34A; /* LGreen 500 */
+    color: #FAFAFA;
+}
+
+#button-start:hover, #button-restart:hover {
+    background-color: #9CCC65; /* LGreen 400 */
+    color: #FAFAFA;
+}
+
+#button-start:active, #button-restart:hover {
+    background-color: #7CB342; /* LGreen 600 */
+    color: #F5F5F5; /* Grey 100 */
+}
+
+/* ==== Game Page ====*/
+
+#page-game {
+
+    /* Transition shenanigans */
+    position: absolute;
+    width: 100%;
+}
+
+#keyword {
+    font-size: 400%;
+}
+
+#timer {
+    position: relative;
+    margin: 0 10px;
+    height: 5px;
+    background-color: #8BC34A; /* LGreen 500 */
+    box-shadow: 1px 1px 1px #33691E; /* LGreen 900 */
+}
+
+.input-box {
+    margin: 50px 10px 10px 10px;
+}
+
+#word-input, #name-input {
+    border: 1px solid #212121;
+    width: 100%;
+    padding: 5px 0;
+    background-color: #f5f5f5;
+    text-align: center;
+    font-size: 100%;
+
+}
+
+/* G 500 */
+input::-webkit-input-placeholder { color: #9E9E9E; !important; }
+input:-moz-placeholder { color: #9E9E9E !important; } /* Firefox 18- */
+input::-moz-placeholder { color: #9E9E9E !important; }/* Firefox 19+ */
+input:-ms-input-placeholder { color: #9E9E9E !important; }
+
+#hint {
+    margin-bottom: 50px;
+    font-size: 50%;
+}
+
+#history {
+    margin: 10px;
+    padding-bottom: 10px;
+    border: 1px solid #9E9E9E; /* Grey 500 */
+    background-color: #E0E0E0; /* Grey 300 */
+    color: #9E9E9E; /* Grey 500 */
+    font-size: 100%;
+}
+
+#button-end {
+    background-color: #f44336; /* Red 500 */
+    color: #FAFAFA;
+}
+
+#button-end:hover {
+    background-color: #ef5350; /* Red 400 */
+    color: #F5F5F5; /* Grey 100 */
+}
+
+#button-end:active {
+    background-color: #e53935; /* Red 600 */
+    color: #F5F5F5; /* Grey 100 */
+}
+
+/* ==== End Page ====*/
+
+#page-end {
+    position: absolute;
+    width: 100%;
+}
+
+
+/* Looking for #button-restart? See #button-start */

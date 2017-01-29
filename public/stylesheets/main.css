@@ -1,0 +1,210 @@
+/* ========= */
+/* Main page */
+/* ========= */
+
+/* Makes padding and border are included in the total width and height of elements */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #f5f5f5;
+    font: 16px 'Open Sans', sans-serif;
+}
+
+a {
+    color: #00B7FF;
+    text-decoration: none;
+}
+
+.text-left {text-align: left;}
+.text-center {text-align: center;}
+.text-right {text-align: right;}
+
+.hidden {display: none;}
+
+.inline-block {display: inline-block;}
+
+/* Responsive Web Design with 3 columns */
+/* Each row should be wrapped in a <div> */
+/* The sum of columns inside a row should add up to 12 */
+
+/* Prevent other elements from ignoring the columns' flow within the page */
+
+.row::after {
+    content: '';
+    clear: both;
+    display: block;
+}
+
+/* Mobile first */
+
+[class*='col-'] {
+    width: 100%;
+    float: left;
+}
+
+.mobile-hide {
+    display: none;
+}
+
+/* Desktop/tablet second */
+
+@media only screen and (min-width: 768px) {
+    .col-1 {width: 8.33%;}
+    .col-2 {width: 16.66%;}
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33%;}
+    .col-5 {width: 41.66%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11 {width: 91.66%;}
+    .col-12 {width: 100%;}
+
+    .mobile-hide {
+        display: block;
+    }
+
+    .mobile-show {
+        display: none;
+    }
+}
+
+/* ============== */
+/* Specific items */
+/* ============== */
+
+/* Wrapper */
+/* This class exists to center content horizontally when the screen is large */
+
+.wrapper {
+    max-width: 960px; /* Breakpoint is 960px */
+    margin: 0 auto; /* This center the class horizontally */
+}
+
+/* Header */
+
+#header {
+    background-color: #212121;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+#header a {
+    color: #fafafa
+}
+
+/* Header (Mobile) */
+
+#header-mobile {
+    height: 20px;
+    /* Note this container has a similar height to the icon elements it contains */
+    /* This is to vertically align the container's child elements */
+}
+
+#header-mobile div {
+    display: inline-block;
+    width: 50%;
+    height: 20px;
+    /* There are 2 main elements under #header-mobile, hence the width of each should be 50% */
+    /* Text-aligning rules are set inline directly within the .html file */
+}
+
+#header-mobile i {
+    line-height: 20px;
+    /* The line height of the icon element is equal to the height of its container */
+    /* This vertically center the icon element */
+}
+
+/* Nav Overlay (Mobile) */
+/* This is the overlay appearing when the menu button is clicked */
+
+#nav-overlay-m {
+    position: fixed; top: 40px; left: 0;
+    /* The overlay is positioned immediately below the header */
+    /* The header has a height of 20px, but we have to add in 10px x 2 to account for the padding*/
+
+    width: 100%; height: 100%;
+    background-color: #212121;
+    opacity: .9; filter: alpha(opacity = 90);
+
+    padding: 10px;
+}
+
+#nav-overlay-m div {
+    padding: 5px;
+    text-align: right;
+}
+
+#nav-overlay-m a {
+    color: #fafafa;
+}
+
+/* Header (Desktop) */
+
+#header-desktop {
+    height: 20px;
+
+    line-height: 20px;
+    /* Setting line-height to >= font-size will vertically align single-line inline elements */
+
+    font-size: 18px;
+}
+
+#logo-title {
+    color: #66bb6a;
+}
+
+/* Nav Bar (Desktop) */
+
+#nav-d {
+    color: #fafafa;
+}
+
+/*#nav-d:before {  // 08/01/2017: Don't know what this relates to...
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+}*/
+
+#nav-d a {
+    display: inline-block;
+    padding: 0 10px 0 10px;
+    color: #fafafa;
+}
+
+#nav-d a:hover {
+    color: #2196F3;
+}
+
+/* Main Content */
+
+#main-content {
+    padding: 20px;
+}
+
+/* ======== */
+/* Snippets */
+/* ======== */
+
+/* Google's material design icon guidelines */
+
+/* Rules for sizing the icon. */
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }
+
+/* Rules for using icons as black on a light background. */
+.material-icons.md-dark { color: rgba(0, 0, 0, 0.54); }
+.material-icons.md-dark.md-inactive { color: rgba(0, 0, 0, 0.26); }
+
+/* Rules for using icons as white on a dark background. */
+.material-icons.md-light { color: rgba(255, 255, 255, 1); }
+.material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
