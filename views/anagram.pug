@@ -1,0 +1,24 @@
+extends layout
+
+block custom-stylesheets
+    link(rel='stylesheet', href='/stylesheets/anagram.css')
+block custom-js
+    script(src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenLite.min.js")
+    script(src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/plugins/CSSPlugin.min.js")
+    script(src='/javascripts/anagram.js')
+
+block content
+    #app
+        .title: |Anagram Solver
+        .desc
+            |Simple. No nonsense.
+        #config
+        .input-box
+            input#text-input(type='text', title='Alphabetical characters only. Maximum 50 characters.', placeholder='Type in something..', v-model='textInput', @keydown.13='inputKDEnter', @keyup.13='inputKUEnter')
+        #status.desc
+            |{{ statusMsg }}
+        #result
+            #c-slider-res-disp
+            .desc: |{{ resMsg }}
+            #result-container
+            #result-share

@@ -13,10 +13,20 @@ html
         script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js')
         script(src='https://unpkg.com/vue/dist/vue.js')
         // Note: vue.min.js should be used for production.
-        script(src='/javascripts/main.js')
+        script(src='/javascripts/anagram-nav.js')
         block custom-js
 
     body
-        header#header
-        block content
-        footer#footer
+        header
+            #header-container.wrapper
+                #game-btn-container
+                    i#game-btn.btn.material-icons.md-225: | &#xE838;
+                #multi-enabled-btn-container
+                    i#multi-enabled-btn.btn.material-icons.md-225.hidden: |&#xE147;
+                    i#multi-enabled-btn-false.btn.material-icons.md-225: |&#xE148;
+            nav
+        section#content.wrapper
+            block content
+        footer
+            #version-container
+                |v.#{version}

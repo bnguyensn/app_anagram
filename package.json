@@ -13,7 +13,7 @@
     "morgan": "~1.7.x",
     "mysql": "2.13.x",
     "path": "~0.12.x",
-    "pug": "~2.0.0-beta6",
+    "pug": "~2.0.0-beta10",
     "serve-favicon": "~2.x.x"
   }
 }
