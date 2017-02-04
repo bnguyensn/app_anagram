@@ -89,7 +89,8 @@ $(document).ready(function() {
             // We are converting (and processing) it to string for ease of use here.
 
             // First we need to clear all current word cards
-            $('#result-container > .word-card-container').remove();
+            let $resultContainer = $('#result-container');
+            $resultContainer.find('.word-card-container').remove();
 
             // Now we can add in new word cards
             if (res.length <= 0) {
@@ -100,7 +101,7 @@ $(document).ready(function() {
                 let resText = res.join(', ');
 
                 for (let i = 0; i < res.length; i++) {
-                    createWordCard(res[i], $('#result-container'), .02 * i);
+                    createWordCard(res[i], $resultContainer, .02 * i);
                 }
                 //TODO: uncomment after implementing text-card switch
                 //app.resMsg = 'Anagram result for "' + q + '": ' + resText + '.';
