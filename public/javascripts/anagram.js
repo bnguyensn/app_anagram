@@ -53,7 +53,7 @@ $(document).ready(function() {
             },
             inputKUEnter: function() {
                 this.kUEnter = true
-            }
+            },
         }
     });
 
